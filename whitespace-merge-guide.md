@@ -1,11 +1,11 @@
-### 2024 Consistent Whitespace
+# 2024 Consistent Whitespace
 
-# Purpose
+## Purpose
 
 The goal of making whitespace consistent across all files is to reduce merge conflicts when pulling changes from LL's canonical upstream into forks. It also makes developers' lives easier as they do not have to deal with files with mixed whitespace. By doing a small amount of work now, future merges will be made simpler. It will also result in a codebase that is less embarrassing and adheres to the [Second Life Coding Standards](https://wiki.secondlife.com/wiki/Coding_standard). Specifically, section 1.1 states that "All text files must use unix (linefeed only) line endings when submitted" and section 2.4.7 requires that "Indentation must use spaces unless the file format requires tabs (Such as in Makefiles), with a default width of 4." Making these changes across the entire codebase will bring it into compliance with these standards.
 
 
-# Integration
+## Integration
 
 Merging the whitespace changes into your branch is a straightforward process that takes advantage of git's built-in merge strategies. By following the instructions below, you can integrate these changes with minimal or no merge conflicts, making the process smooth and hassle-free.
 
