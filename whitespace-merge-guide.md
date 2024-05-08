@@ -2,7 +2,7 @@
 
 # Purpose
 
-The goal of making whitespace consistent across all files is to reduce merge conflicts when pulling changes from LL's canonical upstream into forks. It also makes developers' lives easier as they do not have to deal with files with mixed whitespace. By doing a small amount of work now, future merges will be made simpler. It will also result in a codebase that is less embarrassing and adheres to the [Second Life Coding Standards](https://wiki.secondlife.com/wiki/Coding_standard). Specifically, section 1.1 states that "All text files **must** use unix (linefeed only) line endings when submitted" and section 2.4.7 requires that "Indentation must use spaces unless the file format requires tabs (Such as in Makefiles), with a default width of 4." Making these changes across the entire codebase will bring it into compliance with these standards.
+The goal of making whitespace consistent across all files is to reduce merge conflicts when pulling changes from LL's canonical upstream into forks. It also makes developers' lives easier as they do not have to deal with files with mixed whitespace. By doing a small amount of work now, future merges will be made simpler. It will also result in a codebase that is less embarrassing and adheres to the [Second Life Coding Standards](https://wiki.secondlife.com/wiki/Coding_standard). Specifically, section 1.1 states that "All text files must use unix (linefeed only) line endings when submitted" and section 2.4.7 requires that "Indentation must use spaces unless the file format requires tabs (Such as in Makefiles), with a default width of 4." Making these changes across the entire codebase will bring it into compliance with these standards.
 
 
 # Integration
@@ -13,7 +13,7 @@ Merging the whitespace changes into your branch is a straightforward process tha
 **Prerequisites:**
 
 In order to seamlessly merge the whitespace changes into your branch, it should already be up to date with LL's 2024/04/24 [fc71a9c1](https://github.com/secondlife/viewer/commit/fc71a9c1ed96cb1cb97124e3cceabdfa11e1cc75).
-Current whitespace changes are located in the `secondlife/marchcat/w-whitespace` branch, so it should be used until released. If you do this merge after Maint X release, the same should be done with the `main` branch. 
+Current whitespace changes are located in the [marchcat/w-whitespace](https://github.com/secondlife/viewer/tree/marchcat/w-whitespace) branch, so it should be used until released. If you do this merge after Maint X release, the same should be done with the `main` branch. 
 
 
 **Instructions:**
@@ -68,4 +68,6 @@ The key to avoiding merge conflicts is the use of the `-Xignore-all-space` and `
 
 
 # Notes
+This merge also uses an updated [pre-commit hook](https://github.com/secondlife/viewer/commit/a6c89d9185d61027dd761af0c05fdbb05e3692fe) to ensure that no tabs are committed anymore.
+
 Older version of this doc: [2023 Consistent Whitespace](https://wiki.secondlife.com/wiki/2023_Consistent_Whitespace).
