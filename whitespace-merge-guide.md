@@ -54,7 +54,8 @@ git rm indra/newview/llappviewerlinux_api_dbus.cpp
 git rm indra/newview/llappviewerlinux_api.h 
 git rm indra/linux_crash_logger/llcrashloggerlinux.cpp
 
-# The following script fixes the rest of the files that are not in upstream. Default filter is for the source files only (c, cpp, h, hpp, inl, py, glsl, cmake)
+# The following script fixes the rest of the files that are not in upstream. 
+# Default filter is for the source files only (c, cpp, h, hpp, inl, py, glsl, cmake)
 python scripts/code_tools/fix_whitespace.py -d indra
 
 # When ready, add and commit merge
