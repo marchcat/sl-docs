@@ -10,13 +10,13 @@ The goal of making whitespace consistent across all files is to reduce merge con
 Merging the whitespace changes into your branch is a straightforward process that takes advantage of git's built-in merge strategies. By following the instructions below, you can integrate these changes with minimal or no merge conflicts, making the process smooth and hassle-free.
 
 
-**Prerequisites:**
+### Prerequisites
 
 In order to seamlessly merge the whitespace changes into your branch, it should already be up to date with LL's 2024/04/24 [fc71a9c1](https://github.com/secondlife/viewer/commit/fc71a9c1ed96cb1cb97124e3cceabdfa11e1cc75).
 Current whitespace changes are located in the [marchcat/w-whitespace](https://github.com/secondlife/viewer/tree/marchcat/w-whitespace) branch, so it should be used until released. If you do this merge after Maint X release, the same should be done with the `main` branch. 
 
 
-**Instructions:**
+### Instructions
 
 Set up your repository
 
@@ -67,8 +67,19 @@ Congratulations! You have just merged the whitespace changes that follow LL's co
 
 The key to avoiding merge conflicts is the use of the `-Xignore-all-space` and `-Xignore-space-at-eol` merge strategies, so the whitespace changes are ignored while merging. The script also removes trailing spaces, which makes the code a little cleaner.
 
+### Fixing additional branches
+You can now use your merged branch to update other branches. This should mean any modify/delete conflicts resolved in the first pass will not need to be addressed again.
 
-# Notes
+```bash
+git checkout my-feature-branch
+git merge --no-commit --no-ff -Xignore-all-space -Xignore-space-at-eol spaces-merge
+python scripts/code_tools/fix_whitespace.py -d indra
+git add .
+git commit
+```
+
+
+## Notes
 This merge also uses an updated [pre-commit hook](https://github.com/secondlife/viewer/commit/a6c89d9185d61027dd761af0c05fdbb05e3692fe) to ensure that no tabs are committed anymore.
 
 Older version of this doc: [2023 Consistent Whitespace](https://wiki.secondlife.com/wiki/2023_Consistent_Whitespace).
